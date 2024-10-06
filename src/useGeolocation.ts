@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 /**
  * Get the geo coordinates of user using javascript navigator API
- * @version 1.0.0
+ * @version 1.0.1
  * @param {GeolocationOptions} options - Options for geolocation
  * @returns {GeoLocationStateType} GeoLocationStateType - coordinates, error, isLoading, isSuccess, isFetched
  */

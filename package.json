@@ -1,6 +1,6 @@
 {
   "name": "react-geolocation-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook to track or get the user's geolocation with loading and error handling",
   "main": "dist/useGeolocation.js",
   "scripts": {
