@@ -1,12 +1,11 @@
 "use strict"
-"use client"
 import { useState, useEffect, useRef } from 'react';
-
-type LatLngTuple = [number, number];
 
 /**
  * Get the geo coordinates of user using javascript navigator API
- * @returns {Object} GeoLocationStateType - coordinates, error, isLoading, isSuccess, isFetched
+ * @version 1.0.0
+ * @param {GeolocationOptions} options - Options for geolocation
+ * @returns {GeoLocationStateType} GeoLocationStateType - coordinates, error, isLoading, isSuccess, isFetched
  */
 export function useGeolocation(options?: GeolocationOptions): GeoLocationStateType {
     const [geoLocationState, setGeoLocationState] = useState<GeoLocationStateType>({
@@ -65,6 +64,8 @@ export function useGeolocation(options?: GeolocationOptions): GeoLocationStateTy
     return geoLocationState;
 }
 
+type LatLngTuple = [number, number];
+
 type GeoLocationStateType = {
     coordinates: LatLngTuple | null,
     error: string | null,
@@ -73,9 +74,6 @@ type GeoLocationStateType = {
     isFetched: boolean,
 }
 
-type GeolocationOptions = {
-    enableHighAccuracy?: boolean;
-    timeout?: number;
-    maximumAge?: number;
+type GeolocationOptions = PositionOptions & {
     watchPosition?: boolean;
 }
